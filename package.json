@@ -1,0 +1,30 @@
+{
+  "name": "generator-flyweight",
+  "version": "1.0.0",
+  "description": "An ultra-lightweight Yeoman generator for simple web projects. No frameworks, just jQuery, Bootstrap, Underscore, Font Awesome and scaffolding",
+  "license": "MIT",
+  "repository": "graysonhicks/generator-flyweight",
+  "authors": [
+    "Grayson Hicks <graysonhicks@gmail.com>"
+  ],
+  "main": "app/index.js",
+  "engines": {
+    "node": ">=8.0"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "sass",
+    "bootstrap-sass",
+    "jquery",
+    "flyweight",
+    "yeoman",
+    "lightweight",
+    "generator"
+  ],
+  "dependencies": {
+    "yeoman-generator": "^2.0.5"
+  }
+}
