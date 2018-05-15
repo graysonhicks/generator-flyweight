@@ -1,6 +1,8 @@
-window.jQuery = $ = require('jquery');
-var $ = require('jquery');
-var _ = require('underscore');
-// Required these in by default, feel free to add more.
+// Libraries
+
+// Styles
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import "../styles/index.scss"
 
 console.log("Hey there, flyweight.")

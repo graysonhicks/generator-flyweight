@@ -25,6 +25,8 @@
     "generator"
   ],
   "dependencies": {
+    "popper.js": "^1.14.3",
     "yeoman-generator": "^2.0.5"
-  }
+  },
+  "devDependencies": {}
 }

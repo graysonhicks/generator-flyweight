@@ -1,0 +1,23 @@
+// // Bootstrap Variables
+// $icon-font-path: '../../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
+
+// // Import Bootstrap
+// @import "../../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// @import "../../../node_modules/font-awesome/scss/font-awesome";
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+
+img {
+  max-width: 100%;
+}
+

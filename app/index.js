@@ -4,41 +4,50 @@ const Generator = require('yeoman-generator');
 module.exports = class extends Generator { 
 
   scaffolding() {
-  // Copy dot files
-  this.fs.copy(
-    this.templatePath('.*'),
-    this.destinationRoot()
-  );
-  console.log(this.templatePath());
-  console.log(this.destinationPath());
-  
-  
+    // Copy dot files.
+    this.fs.copy(
+      this.templatePath('.*'),
+      this.destinationRoot()
+    );
 
-    // Copy HTML
+    // Copy HTML.
     this.fs.copyTpl(
       this.templatePath('index.html'),
       this.destinationPath('app/index.html'),
       { title: this.appname }
     );
 
-    // Copy README file
+    // Copy README file.
     this.fs.copy(
       this.templatePath('README.md'),
       this.destinationPath(`README.md`)
     );
 
-     // Copy stylesheet
+     // Copy stylesheet.
      this.fs.copy(
-      this.templatePath('src/styles/app.sass'),
-      this.destinationPath(`app/src/styles/app.sass`)
+      this.templatePath('src/styles/index.scss'),
+      this.destinationPath(`app/src/styles/index.scss`)
     );
 
-     // Copy app script
+     // Copy app script entry.
      this.fs.copy(
       this.templatePath('src/scripts/index.js'),
       this.destinationPath(`app/src/scripts/index.js`)
     );
 
+     // Copy app bundle placeholder.
+     this.fs.copy(
+      this.templatePath('dist/bundle.js'),
+      this.destinationPath(`app/dist/bundle.js`)
+    );
+
+    // Copy webpack config.
+    this.fs.copy(
+      this.templatePath('webpack.config.js'),
+      this.destinationPath('webpack.config.js')
+    );
+
+    // Copy favicon.
     this.fs.copy(
       this.templatePath('favicon.ico'),
       this.destinationPath('favicon.ico')
@@ -54,24 +63,31 @@ module.exports = class extends Generator {
       author: '',
       "private": true,
       "engines": {
-        "node": ">=8.0"
+        "node": ">=8.9.4"
+      },
+      "dependencies": {
+        "jquery": "^2.2.0",
+        "jquery-ui": "^1.10",
+        "underscore": "^1.8.3",
+        "bootstrap-sass": "^3.3.6",
+        "font-awesome": "^4.5.0"
+      },
+      "devDependencies": {
+        "node-sass": "^4.9.0",
+        "webpack": "^4.8.3",
+        "webpack-cli": "^2.1.3",
+        "webpack-dev-server": "^3.1.4",
+        "css-loader": "^0.28.11",
+        "sass-loader": "^7.0.1",
+        "style-loader": "^0.21.0",
+        "file-loader": "^1.1.11",
+        "html-webpack-plugin": "^3.2.0",
+        "clean-webpack-plugin": "^0.1.19"
       },
       "scripts": {
-        "sass": "sass --style compressed --update app/src/styles/app.sass:app/dist/styles/app.css",
-        "browserify": "browserify app/src/scripts/index.js -o app/dist/scripts/bundle.js",
-        "watch:sass": "sass --watch app/src/styles/app.sass:app/dist/styles/app.css",
-        "watch:js": "watchify app/src/scripts/index.js -o app/dist/scripts/bundle.js",
-        "server": "live-server --open='app'",
-        "watch": "parallelshell 'npm run watch:sass' 'npm run watch:js' 'npm run server'"
-      },
-      "browserify": {
-        "transform": [
-          "browserify-shim"
-        ]
-      },
-      "browserify-shim": {
-        "jQuery": "$",
-        "underscore": "_"
+        "build": "webpack --production",
+        "watch": "webpack --watch",
+        "start": "webpack-dev-server --mode development --open"
       }
     };
 
@@ -80,18 +96,24 @@ module.exports = class extends Generator {
 
   install() {
     this.npmInstall([
-      'browserify',
       'jquery',
       'jquery-ui',
       'underscore',
-      'bootstrap-sass',
       'font-awesome',
-      'browserify',
-      'watchify',
-      'browserify-shim',
-      'parallelshell',
-      'live-server',
-      'onchange'
+      'popper.js',
+      'bootstrap',
+    ]);
+
+    this.npmInstall([
+      "node-sass",
+      "webpack",
+      "webpack-cli",
+      "webpack-dev-server",
+      "css-loader",
+      "sass-loader",
+      "style-loader",
+      "file-loader",
+      "clean-webpack-plugin"
     ], { 'save-dev': true });
   }
 }
