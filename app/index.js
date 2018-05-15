@@ -67,7 +67,7 @@ module.exports = class extends Generator {
         "node": ">=8.9.4"
       },
       "dependencies": {
-        "jquery": "^2.2.0",
+        "jquery": "~> 3.0.0",
         "underscore": "^1.8.3",
         "popper.js": "^1.14.3",
         "bootstrap": "^4.1.1"
