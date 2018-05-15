@@ -1,1 +1,2 @@
-- maybe install browserify with watchify, onchange, etc.
+- font awesome
+- babel

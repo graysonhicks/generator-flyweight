@@ -67,10 +67,9 @@ module.exports = class extends Generator {
       },
       "dependencies": {
         "jquery": "^2.2.0",
-        "jquery-ui": "^1.10",
         "underscore": "^1.8.3",
-        "bootstrap-sass": "^3.3.6",
-        "font-awesome": "^4.5.0"
+        "popper.js": "^1.14.3",
+        "bootstrap": "^4.1.1"
       },
       "devDependencies": {
         "node-sass": "^4.9.0",
@@ -97,9 +96,7 @@ module.exports = class extends Generator {
   install() {
     this.npmInstall([
       'jquery',
-      'jquery-ui',
       'underscore',
-      'font-awesome',
       'popper.js',
       'bootstrap',
     ]);

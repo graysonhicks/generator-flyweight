@@ -2,16 +2,13 @@
 
 <img src="fly.png" width="150">
 
-An ultra-lightweight Yeoman generator for simple web projects. No frameworks, just jQuery, Bootstrap, Underscore, Font Awesome and scaffolding
+An ultra-lightweight Yeoman generator for simple web projects. No frameworks, just jQuery, Bootstrap, Underscore, and scaffolding
 
 ### What is Included
 * Sass
 * jQuery
-* jQueryUI
 * Underscore
-* Font-Awesome
-* Bootstrap
-* Browserify/watchify
+* Bootstrap 4
 
 ### Installation & Usage
 
@@ -36,4 +33,4 @@ yo flyweight
 
 ## npm Tasks
 
-Included browserify.  Run `npm run watch` to start sass and watchify and a live server with onchange refresh.
+Included webpack.  Run `npm run watch` to start webpack-dev-server with hot module reloading.
