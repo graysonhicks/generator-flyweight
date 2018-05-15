@@ -33,4 +33,4 @@ yo flyweight
 
 ## npm Tasks
 
-Included webpack.  Run `npm run watch` to start webpack-dev-server with hot module reloading.
+Included webpack.  Run `npm run start` to start webpack-dev-server with hot module reloading.

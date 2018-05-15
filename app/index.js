@@ -50,13 +50,14 @@ module.exports = class extends Generator {
     // Copy favicon.
     this.fs.copy(
       this.templatePath('favicon.ico'),
-      this.destinationPath('favicon.ico')
+      this.destinationPath('app/favicon.ico')
     );
   }
 
   createPackageJson() {
     let pkg = {
-      name: this.appname,
+      name: this.appname.replace(/\s+/g, '-').toLowerCase(),
+      homepage: this.appname.replace(/\s+/g, '-').toLowerCase(),
       version: '1.0.0',
       description: '',
       keywords: [],
@@ -81,7 +82,8 @@ module.exports = class extends Generator {
         "style-loader": "^0.21.0",
         "file-loader": "^1.1.11",
         "html-webpack-plugin": "^3.2.0",
-        "clean-webpack-plugin": "^0.1.19"
+        "clean-webpack-plugin": "^0.1.19",
+        "html-webpack-plugin": "^3.2.0"
       },
       "scripts": {
         "build": "webpack --production",
@@ -110,7 +112,8 @@ module.exports = class extends Generator {
       "sass-loader",
       "style-loader",
       "file-loader",
-      "clean-webpack-plugin"
+      "clean-webpack-plugin",
+      "html-webpack-plugin"
     ], { 'save-dev': true });
   }
 }
