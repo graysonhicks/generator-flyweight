@@ -6,7 +6,7 @@ module.exports = class extends Generator {
   scaffolding() {
     // Copy dot files.
     this.fs.copy(
-      this.templatePath('.gitignore'),
+      this.templatePath('.gitignore.tmp'),
       this.destinationPath('.gitignore')
     );
 
