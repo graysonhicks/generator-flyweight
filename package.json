@@ -1,6 +1,6 @@
 {
   "name": "generator-flyweight",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An ultra-lightweight Yeoman generator for simple web projects. No frameworks, just jQuery, Bootstrap, Underscore, Font Awesome and scaffolding",
   "license": "MIT",
   "repository": "graysonhicks/generator-flyweight",
